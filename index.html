@@ -48,13 +48,12 @@
             z-index: 0;
         }
         body.dashboard-open {
-            overflow-x: hidden;
-            overflow-y: auto;
-            align-items: flex-start;
+            overflow: hidden;
+            align-items: center;
             justify-content: center;
-            height: auto;
+            height: 100vh;
             min-height: 100vh;
-            padding: 24px 16px 32px;
+            padding: 0;
             box-sizing: border-box;
         }
         body.about-modal-open {
@@ -272,13 +271,13 @@
         .btn svg { width: 16px; height: 16px; fill: #fff; }
 
         /* Main Dashboard */
+        /* Main Dashboard */
         #dashboard {
             display: none;
             flex-direction: row;
             align-items: stretch;
             width: min(96vw, 1160px);
-            max-width: 1160px;
-            min-height: min(90vh, 840px);
+            height: min(90vh, 840px);
             animation: dashIn 0.7s cubic-bezier(0.22,1,0.36,1) forwards;
             border-radius: 28px;
             background: linear-gradient(145deg, rgba(10,16,35,0.98), rgba(3,7,20,0.97));
@@ -287,9 +286,11 @@
                 0 0 80px -10px rgba(99,102,241,0.18),
                 0 40px 100px rgba(0,0,0,0.8),
                 inset 0 1px 0 rgba(255,255,255,0.05);
+            -webkit-backdrop-filter: blur(40px) saturate(160%);
             backdrop-filter: blur(40px) saturate(160%);
             overflow: hidden;
             position: relative;
+            flex-shrink: 0;
         }
         #dashboard::before {
             content: '';
@@ -302,8 +303,8 @@
             z-index: 0;
         }
         @keyframes dashIn {
-            from { opacity: 0; transform: translateY(30px) scale(0.97); }
-            to { opacity: 1; transform: translateY(0) scale(1); }
+            from { opacity: 0; transform: scale(0.97); }
+            to   { opacity: 1; transform: scale(1); }
         }
         .dash-sidebar {
             width: 240px;
@@ -1186,52 +1187,8 @@
             fill: #f87171;
             filter: drop-shadow(0 0 5px rgba(248,113,113,0.8));
         }
-        @media (max-width: 720px) {
-            #dashboard {
-                flex-direction: column;
-                min-height: auto;
-                width: min(96vw, 100%);
-            }
-            .dash-sidebar {
-                width: 100%;
-                flex-direction: row;
-                flex-wrap: wrap;
-                align-items: center;
-                border-right: none;
-                border-bottom: 1px solid rgba(148, 163, 184, 0.22);
-                padding: 16px 14px;
-            }
-            .dash-brand {
-                flex: 1;
-                min-width: 140px;
-            }
-            .dash-nav {
-                flex-direction: row;
-                flex-wrap: wrap;
-                width: 100%;
-            }
-            .dash-nav-btn {
-                flex: 1;
-                min-width: 120px;
-                justify-content: center;
-            }
-            .dash-sidebar-spacer {
-                display: none;
-            }
-            .dash-about-foot {
-                width: 100%;
-                border-top: none;
-                padding-top: 0;
-            }
-            .btn-about {
-                justify-content: center;
-            }
-        }
         @media (prefers-reduced-motion: reduce) {
-            * {
-                animation: none !important;
-                transition: none !important;
-            }
+            * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
         }
     </style>
 </head>
@@ -1601,6 +1558,8 @@
             // Check after the animation should have completed
             setTimeout(ensureWelcomeVisible, 1500);
         })();
+
+
 
         function openAboutModal() {
             const m = document.getElementById('about-modal');
