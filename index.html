@@ -6,7 +6,8 @@
     <title>NX Tweaker — PUBG Mods Dashboard</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="all" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
     <style>
         :root {
             --bg: #020617;
@@ -107,6 +108,7 @@
                 0 0 60px -30px rgba(167,139,250,0.25),
                 0 30px 80px -10px rgba(0,0,0,0.8),
                 inset 0 1px 0 rgba(255,255,255,0.06);
+            -webkit-backdrop-filter: blur(40px) saturate(180%);
             backdrop-filter: blur(40px) saturate(180%);
             max-width: 520px;
             width: min(92vw, 520px);
@@ -114,6 +116,12 @@
             z-index: 1;
             animation: welcomeCardIn 0.9s cubic-bezier(0.22,1,0.36,1) forwards;
             opacity: 0;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            #welcome { animation: none !important; opacity: 1 !important; }
+            .welcome-logo, .welcome-badge, #welcome h1, #welcome p, .btn, .social-links {
+                animation: none !important; opacity: 1 !important; transform: none !important;
+            }
         }
         @keyframes welcomeCardIn {
             from { opacity: 0; transform: translateY(50px) scale(0.94); }
@@ -1572,6 +1580,28 @@
     <div id="notification-container" role="status" aria-live="polite"></div>
 
     <script>
+        // Safety fallback: ensure welcome card is always visible
+        // Some systems block CSS animations (accessibility settings, old WebView2, slow internet losing Google Fonts)
+        (function() {
+            function ensureWelcomeVisible() {
+                var w = document.getElementById('welcome');
+                if (!w) return;
+                var cs = window.getComputedStyle(w);
+                var op = parseFloat(cs.opacity);
+                // If still invisible after 1.5s, force it visible
+                if (op < 0.1) {
+                    w.style.cssText += 'opacity:1!important;transform:none!important;animation:none!important;';
+                    // Also fix child elements that animate in
+                    var els = w.querySelectorAll('.welcome-logo,.welcome-badge,h1,p,.btn,.social-links');
+                    for (var i = 0; i < els.length; i++) {
+                        els[i].style.cssText += 'opacity:1!important;transform:none!important;animation:none!important;';
+                    }
+                }
+            }
+            // Check after the animation should have completed
+            setTimeout(ensureWelcomeVisible, 1500);
+        })();
+
         function openAboutModal() {
             const m = document.getElementById('about-modal');
             const b = document.getElementById('btn-about');
