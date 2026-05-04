@@ -234,6 +234,22 @@
             box-shadow: 0 8px 28px rgba(42,171,238,0.35); border-color: rgba(42,171,238,0.6);
             transform: translateY(-3px);
         }
+        .social-link-instagram {
+            background: linear-gradient(135deg, rgba(225,48,108,0.2), rgba(225,48,108,0.08));
+            border-color: rgba(225,48,108,0.3);
+        }
+        .social-link-instagram:hover {
+            box-shadow: 0 8px 28px rgba(225,48,108,0.35); border-color: rgba(225,48,108,0.6);
+            transform: translateY(-3px);
+        }
+        .social-link-youtube {
+            background: linear-gradient(135deg, rgba(255,0,0,0.2), rgba(255,0,0,0.08));
+            border-color: rgba(255,0,0,0.3);
+        }
+        .social-link-youtube:hover {
+            box-shadow: 0 8px 28px rgba(255,0,0,0.35); border-color: rgba(255,0,0,0.6);
+            transform: translateY(-3px);
+        }
 
         .social-link:focus-visible {
             outline: none; transform: translateY(-2px);
@@ -598,6 +614,14 @@
         }
         .about-modal-tiktok svg {
             margin-top: 1px;
+        }
+        .about-modal-instagram {
+            background: linear-gradient(145deg, rgba(225, 48, 108, 0.9), rgba(253, 29, 29, 0.8));
+            border-color: rgba(251, 113, 133, 0.45);
+        }
+        .about-modal-youtube {
+            background: linear-gradient(145deg, rgba(255, 0, 0, 0.9), rgba(153, 0, 0, 0.8));
+            border-color: rgba(252, 165, 165, 0.45);
         }
         #risk-modal .about-modal-backdrop {
             background: rgba(0, 0, 0, 0.92);
@@ -1227,6 +1251,16 @@
                     <path d="M15.5 2.5 13.6 14.2c-.2 1.1-.9 1.4-1.9.9l-4.3-3.2-2.1 2a1.3 1.3 0 0 1-1 .4l.4-4.5L12.7 3.2c.6-.5-0.1-.7-.8-.2L3.8 8.1 1 7.2C0 6.9 0 6.1 1.1 5.6l13.2-5.1c.9-.3 1.7.2 1.2 2z"/>
                 </svg>
             </a>
+            <a href="https://www.instagram.com/nxgaming_official_?igsh=ZG9qYXZpbHFnbXlo&utm_source=qr" class="social-link social-link-instagram" aria-label="Instagram profile" title="Instagram" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 16 16">
+                    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.999 0h.001z M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0-1.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zm3.5-6a0.8 0 1 0 0-1.6 0.8 0 0 0 0 1.6z" fill-rule="evenodd" />
+                </svg>
+            </a>
+            <a href="https://youtube.com/@nx_tweaker?si=mGyI5xsjGhpKSShe" class="social-link social-link-youtube" aria-label="YouTube channel" title="YouTube" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 16 16">
+                    <path d="M15.89 4.11a2 2 0 0 0-1.41-1.41C13.23 2.4 8 2.4 8 2.4s-5.23 0-6.48.3a2 2 0 0 0-1.41 1.41C0 5.36 0 8 0 8s0 2.64.11 3.89a2 2 0 0 0 1.41 1.41C2.77 13.6 8 13.6 8 13.6s5.23 0 6.48-.3a2 2 0 0 0 1.41-1.41C16 10.64 16 8 16 8s0-2.64-.11-3.89zM6.4 10.4V5.6L10.4 8l-4 2.4z" />
+                </svg>
+            </a>
         </div>
     </div>
 
@@ -1259,10 +1293,19 @@
                     </svg>
                     <span class="nav-cat-label">RISK</span>
                 </button>
+                <button type="button" class="dash-nav-btn" id="nav-recovery" role="tab" aria-selected="false" aria-controls="dash-page-recovery" onclick="setDashboardPage('recovery')">
+                    <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1.5a6.5 6.5 0 1 0 5.47 2.98l-1.2.83A5 5 0 1 1 8 3v2l3-2.5L8 0v1.5zM7.25 5v4.25l3 1.75.5-.87-2.5-1.46V5h-1z"/></svg>
+                    <span class="nav-cat-label">RECOVERY</span>
+                </button>
+                <button type="button" class="dash-nav-btn" id="nav-gameloop" role="tab" aria-selected="false" aria-controls="dash-page-gameloop" onclick="setDashboardPage('gameloop')">
+                    <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1.5a6.5 6.5 0 1 1-6.23 8.35h1.62A5 5 0 1 0 8 3a4.95 4.95 0 0 0-3.96 1.95L6 7H1.5V2.5l1.48 1.48A6.45 6.45 0 0 1 8 1.5zm-.75 3h1.5v4h-1.5v-4zm0 5h1.5V11h-1.5V9.5z"/></svg>
+                    <span class="nav-cat-label">GAMELOOP</span>
+                </button>
                 <button type="button" class="dash-nav-btn" id="nav-graphics" role="tab" aria-selected="false" aria-controls="dash-page-graphics" onclick="setDashboardPage('graphics')">
                     <svg viewBox="0 0 16 16"><path fill="currentColor" d="M2 3h12v10H2V3zm1 1v8h10V4H3zm2 2h6v1H5V6zm0 2h4v1H5V8zm0 2h6v1H5v-1z"/></svg>
                     <span class="nav-cat-label">GRAPHICS</span>
                 </button>
+
             </nav>
             <div class="dash-sidebar-spacer" aria-hidden="true"></div>
             <div class="dash-about-foot">
@@ -1486,6 +1529,111 @@
                     </button>
                 </div>
             </div>
+
+            <div id="dash-page-gameloop" class="dash-page" role="tabpanel" aria-labelledby="nav-gameloop" aria-hidden="true">
+                <div class="dash-page-head">
+                    <h2>GameLoop</h2>
+                    <p>Apply specialized models and settings for GameLoop emulator.</p>
+                </div>
+                <div class="section-title section-title-lg">Optimization</div>
+                <div class="optimizer-grid">
+                    <button type="button" class="mod-btn optimizer-btn" data-code="NX_APPLY_MODEL" data-command="APPLY_MODEL" onclick="runOptimizerAction(this,'applyModel')">
+                        <svg viewBox="0 0 16 16"><path fill="currentColor" d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752a.5.5 0 0 1 0 .696c-.654.689-1.782.886-3.112.752-1.234-.124-2.503-.523-3.388-.893V2.828zm7.5.752c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v.696c-.885.37-2.154.769-3.388.893-1.33.134-2.458-.063-3.112-.752a.5.5 0 0 1 0-.696zM1 12.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752a.5.5 0 0 1 0 .696c-.654.689-1.782.886-3.112.752-1.234-.124-2.503-.523-3.388-.893v-.696zm7.5.752c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v.696c-.885.37-2.154.769-3.388.893-1.33.134-2.458-.063-3.112-.752a.5.5 0 0 1 0-.696z"/></svg>
+                        <span>APPLY MODEL</span>
+                    </button>
+                    <button type="button" class="mod-btn optimizer-btn" data-code="NX_APPLY_SETTINGS" data-command="APPLY_SETTINGS" onclick="runOptimizerAction(this,'applySettings')">
+                        <svg viewBox="0 0 16 16"><path fill="currentColor" d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.17.311c.586 1.06.359 2.378-.65 2.806l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.17a1.464 1.464 0 0 1 2.806.65l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.17-.311a1.464 1.464 0 0 1 .65-2.806l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.17a1.464 1.464 0 0 1-2.806-.65l-.1-.34zM8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+                        <span>APPLY SETTINGS</span>
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- ============================================================
+                 RECOVERY PAGE
+            ============================================================= -->
+            <div id="dash-page-recovery" class="dash-page" role="tabpanel" aria-labelledby="nav-recovery" aria-hidden="true">
+                <div class="dash-page-head">
+                    <h2>Recovery</h2>
+                    <p>Manage your Paks mod files — copy, set, select and apply them to GameLoop without touching game files manually.</p>
+                </div>
+
+                <div class="section-title section-title-lg">Paks Operations</div>
+                <div class="optimizer-grid">
+
+                    <!-- COPY PAKS -->
+                    <button type="button" class="mod-btn optimizer-btn" id="btn-copy-paks"
+                            data-code="NX_COPY_PAKS" data-command="COPY_PAKS"
+                            onclick="runRecoveryAction(this,'copyPaks')">
+                        <svg viewBox="0 0 16 16">
+                            <path d="M4 2h6l3 3v9H4V2zm1 1v10h7V6h-3V3H5zm5 .7L11.3 5H10V3.7zM1 4h2v1H2v9h7v-1h1v2H1V4z"/>
+                        </svg>
+                        <span>COPY PAKS</span>
+                    </button>
+
+
+
+                    <!-- SELECT PAKS FOLDER -->
+                    <button type="button" class="mod-btn optimizer-btn" id="btn-select-paks-folder"
+                            data-code="NX_SELECT_PAKS_FOLDER" data-command="SELECT_PAKS_FOLDER"
+                            onclick="runRecoveryAction(this,'selectPaksFolder')">
+                        <svg viewBox="0 0 16 16">
+                            <path d="M1.5 3A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-6A1.5 1.5 0 0 0 14.5 5H7.8L6.3 3H1.5z"/>
+                        </svg>
+                        <span>SELECT PAKS FOLDER</span>
+                    </button>
+
+                    <!-- APPLY THE RECOVERY -->
+                    <button type="button" class="mod-btn optimizer-btn" id="btn-apply-recovery"
+                            data-code="NX_APPLY_RECOVERY" data-command="APPLY_RECOVERY"
+                            onclick="runRecoveryAction(this,'applyRecovery')">
+                        <svg viewBox="0 0 16 16">
+                            <path d="M8 1.5a6.5 6.5 0 1 0 5.47 2.98l-1.2.83A5 5 0 1 1 8 3v2l3-2.5L8 0v1.5zm-1 3.5 4.5 3L7 11.5V5z"/>
+                        </svg>
+                        <span>APPLY THE RECOVERY</span>
+                    </button>
+
+                </div>
+
+                <div class="section-title section-title-lg">SENSIVTY RECOVRY</div>
+                <div class="optimizer-grid">
+
+                    <!-- COBY SENS -->
+                    <button type="button" class="mod-btn optimizer-btn" id="btn-copy-sens"
+                            data-code="NX_COPY_SENS" data-command="COPY_SENS"
+                            onclick="runRecoveryAction(this,'copySens')">
+                        <svg viewBox="0 0 16 16">
+                            <path fill="currentColor" d="M4 2h6l3 3v9H4V2zm1 1v10h7V6h-3V3H5zm5 .7L11.3 5H10V3.7zM1 4h2v1H2v9h7v-1h1v2H1V4z"/>
+                        </svg>
+                        <span>COBY SENS</span>
+                    </button>
+
+                    <!-- SELECT SENS -->
+                    <button type="button" class="mod-btn optimizer-btn" id="btn-select-sens"
+                            data-code="NX_SELECT_SENS" data-command="SELECT_SENS"
+                            onclick="runRecoveryAction(this,'selectSens')">
+                        <svg viewBox="0 0 16 16">
+                            <path fill="currentColor" d="M1.5 3A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-6A1.5 1.5 0 0 0 14.5 5H7.8L6.3 3H1.5z"/>
+                        </svg>
+                        <span>SELECT SENS</span>
+                    </button>
+
+                    <!-- APPLY SENS -->
+                    <button type="button" class="mod-btn optimizer-btn" id="btn-apply-sens"
+                            data-code="NX_APPLY_SENS" data-command="APPLY_SENS"
+                            onclick="runRecoveryAction(this,'applySens')">
+                        <svg viewBox="0 0 16 16">
+                            <path fill="currentColor" d="M8 1.5a6.5 6.5 0 1 0 5.47 2.98l-1.2.83A5 5 0 1 1 8 3v2l3-2.5L8 0v1.5zm-1 3.5 4.5 3L7 11.5V5z"/>
+                        </svg>
+                        <span>APPLY SENS</span>
+                    </button>
+
+                </div>
+
+                </div>
+
+            </div>
+
         </div>
     </div>
 
@@ -1504,6 +1652,16 @@
                 </a>
                 <a href="https://www.tiktok.com/@nxtiktoktv?_r=1&_t=ZS-937AgsT8Ogh" class="social-link about-modal-link about-modal-tiktok" aria-label="TikTok profile" title="TikTok" target="_blank" rel="noopener noreferrer">
                     <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"/></svg>
+                </a>
+                <a href="https://www.instagram.com/nxgaming_official_?igsh=ZG9qYXZpbHFnbXlo&utm_source=qr" class="social-link about-modal-link about-modal-instagram" aria-label="Instagram profile" title="Instagram" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.999 0h.001z M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0-1.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zm3.5-6a0.8 0 1 0 0-1.6 0.8 0 0 0 0 1.6z" fill-rule="evenodd" />
+                    </svg>
+                </a>
+                <a href="https://youtube.com/@nx_tweaker?si=mGyI5xsjGhpKSShe" class="social-link about-modal-link about-modal-youtube" aria-label="YouTube channel" title="YouTube" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <path d="M15.89 4.11a2 2 0 0 0-1.41-1.41C13.23 2.4 8 2.4 8 2.4s-5.23 0-6.48.3a2 2 0 0 0-1.41 1.41C0 5.36 0 8 0 8s0 2.64.11 3.89a2 2 0 0 0 1.41 1.41C2.77 13.6 8 13.6 8 13.6s5.23 0 6.48-.3a2 2 0 0 0 1.41-1.41C16 10.64 16 8 16 8s0-2.64-.11-3.89zM6.4 10.4V5.6L10.4 8l-4 2.4z" />
+                    </svg>
                 </a>
             </div>
         </div>
@@ -1589,7 +1747,8 @@
             if (about && about.classList.contains('is-open')) closeAboutModal();
         });
 
-        const DASH_PAGES = ['clean', 'optimize', 'debloat', 'boost', 'risk', 'graphics'];
+        const DASH_PAGES = ['clean', 'optimize', 'debloat', 'boost', 'risk', 'graphics', 'recovery', 'gameloop'];
+
         let riskWarningAcceptedInMemory = false;
 
         function isRiskWarningAccepted() {
@@ -1882,8 +2041,11 @@
                 serviceDebloater: { msg: 'Running service debloater...', code: 'NX_SERVICE_DEBLOATER', command: 'SERVICE_DEBLOATER' },
                 debloatWithMicrosoft: { msg: 'Running full debloat (with Microsoft)...', code: 'NX_FULL_DEBLOAT_WITH_MICROSOFT', command: 'FULL_DEBLOAT_WITH_MICROSOFT' },
                 debloatWithoutMicrosoft: { msg: 'Running full debloat (without Microsoft)...', code: 'NX_FULL_DEBLOAT_WITHOUT_MICROSOFT', command: 'FULL_DEBLOAT_WITHOUT_MICROSOFT' },
-                nxTimerResolution: { msg: 'Applying NX timer resolution...', code: 'NX_TIMER_RESOLUTION', command: 'NX_TIMER_RESOLUTION' }
+                nxTimerResolution: { msg: 'Applying NX timer resolution...', code: 'NX_TIMER_RESOLUTION', command: 'NX_TIMER_RESOLUTION' },
+                applyModel:       { msg: 'Applying GameLoop Model...', code: 'NX_APPLY_MODEL', command: 'APPLY_MODEL' },
+                applySettings:    { msg: 'Applying GameLoop Settings...', code: 'NX_APPLY_SETTINGS', command: 'APPLY_SETTINGS' }
             };
+
             const t = table[action];
             if (!t) return;
             showNotification(t.msg, 'info');
@@ -1892,6 +2054,28 @@
             const args = parseArgs(el && el.dataset ? el.dataset.args : '');
             sendToHost('optimizerAction', { action, code, command, args });
         }
+
+        // ── Recovery actions ─────────────────────────────────────────────
+        function runRecoveryAction(el, action) {
+            const table = {
+                copyPaks:         { msg: 'Select a Paks file to copy to GameLoop temp...', code: 'NX_COPY_PAKS',         command: 'COPY_PAKS' },
+                selectPaksFolder: { msg: 'Select the Paks folder to copy to GameLoop temp...', code: 'NX_SELECT_PAKS_FOLDER', command: 'SELECT_PAKS_FOLDER' },
+                applyRecovery:    { msg: 'Applying recovery — copying Paks folder to game...', code: 'NX_APPLY_RECOVERY',    command: 'APPLY_RECOVERY' },
+                copySens:         { msg: 'Copying Sensitivity from game...', code: 'NX_COPY_SENS', command: 'COPY_SENS' },
+                selectSens:       { msg: 'Select Sensitivity folder...', code: 'NX_SELECT_SENS', command: 'SELECT_SENS' },
+                applySens:        { msg: 'Applying Sensitivity to game...', code: 'NX_APPLY_SENS', command: 'APPLY_SENS' }
+            };
+
+
+            const t = table[action];
+            if (!t) return;
+            showNotification(t.msg, 'info');
+            const code    = (el && el.dataset && el.dataset.code)    ? el.dataset.code    : t.code;
+            const command = (el && el.dataset && el.dataset.command) ? el.dataset.command : t.command;
+            const args    = parseArgs(el && el.dataset ? el.dataset.args : '');
+            sendToHost('recoveryAction', { action, code, command, args });
+        }
+
         const hasHost = !!(window.chrome && window.chrome.webview);
         function parseArgs(s) {
             const out = {};
@@ -1977,7 +2161,16 @@
                             case 'CLEAR_TEMP': runOptimizerAction(null, 'clearTemp'); break;
                             case 'FULL_DEBLOAT_WITH_MICROSOFT': runOptimizerAction(null, 'debloatWithMicrosoft'); break;
                             case 'FULL_DEBLOAT_WITHOUT_MICROSOFT': runOptimizerAction(null, 'debloatWithoutMicrosoft'); break;
-                            case 'NX_TIMER_RESOLUTION': runOptimizerAction(null, 'nxTimerResolution'); break;
+                            case 'NX_TIMER_RESOLUTION':   runOptimizerAction(null, 'nxTimerResolution'); break;
+                            case 'COPY_PAKS':             runRecoveryAction(null, 'copyPaks');         break;
+                            case 'SELECT_PAKS_FOLDER':    runRecoveryAction(null, 'selectPaksFolder'); break;
+                            case 'APPLY_RECOVERY':        runRecoveryAction(null, 'applyRecovery');    break;
+                            case 'COPY_SENS':             runRecoveryAction(null, 'copySens');         break;
+                            case 'SELECT_SENS':           runRecoveryAction(null, 'selectSens');       break;
+                            case 'APPLY_SENS':            runRecoveryAction(null, 'applySens');        break;
+                            case 'APPLY_MODEL':           runOptimizerAction(null, 'applyModel');      break;
+                            case 'APPLY_SETTINGS':        runOptimizerAction(null, 'applySettings');   break;
+
                             default: break;
                         }
                     }
@@ -1998,7 +2191,7 @@
                     command: 'READY',
                     version: '1.0',
                     title: 'NX TWEAKER',
-                    features: ['mods', 'controls', 'notifications', 'welcome', 'dashboardPages', 'clean', 'optimize', 'debloat', 'boost', 'graphics', 'optimizer', 'optimizerClean', 'optimizerOptimize']
+                    features: ['mods', 'controls', 'notifications', 'welcome', 'dashboardPages', 'clean', 'optimize', 'debloat', 'boost', 'graphics', 'optimizer', 'optimizerClean', 'optimizerOptimize', 'recovery']
                 }
             });
         }
